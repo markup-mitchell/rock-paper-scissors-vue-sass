@@ -5,16 +5,7 @@
         <Header :score="score"></Header>
       </template>
       <div v-if="playerChoice === 'pending'">
-        <h1>{{ playerChoice }}</h1>
-        <button value="rock" v-on:click="setPlayerChoice">
-          rock
-        </button>
-        <button value="paper" v-on:click="setPlayerChoice">
-          paper
-        </button>
-        <button value="scissors" v-on:click="setPlayerChoice">
-          scissors
-        </button>
+        <PlayerChoose @setPlayerChoice="setPlayerChoice" />
       </div>
       <template #rules>
         <button>RULES</button>
@@ -26,6 +17,7 @@
 <script>
 import Layout from './components/Layout';
 import Header from './components/Header';
+import PlayerChoose from './components/PlayerChoose';
 
 export default {
   name: 'App',
@@ -40,13 +32,14 @@ export default {
     increment() {
       this.score++;
     },
-    setPlayerChoice(e) {
-      this.playerChoice = e.target.value;
+    setPlayerChoice(choice) {
+      this.playerChoice = choice;
     }
   },
   components: {
     Layout,
-    Header
+    Header,
+    PlayerChoose
   }
 };
 </script>
