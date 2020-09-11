@@ -1,7 +1,24 @@
 <template>
   <div id="app">
     <Layout>
-      <Header :score="score"></Header>
+      <template #header>
+        <Header :score="score"></Header>
+      </template>
+      <div v-if="playerChoice === 'pending'">
+        <h1>{{ playerChoice }}</h1>
+        <button value="rock" v-on:click="setPlayerChoice">
+          rock
+        </button>
+        <button value="paper" v-on:click="setPlayerChoice">
+          paper
+        </button>
+        <button value="scissors" v-on:click="setPlayerChoice">
+          scissors
+        </button>
+      </div>
+      <template #rules>
+        <button>RULES</button>
+      </template>
     </Layout>
   </div>
 </template>
@@ -16,8 +33,16 @@ export default {
     return {
       playerChoice: 'pending',
       houseChoice: 'pending',
-      score: 12
+      score: 0
     };
+  },
+  methods: {
+    increment() {
+      this.score++;
+    },
+    setPlayerChoice(e) {
+      this.playerChoice = e.target.value;
+    }
   },
   components: {
     Layout,

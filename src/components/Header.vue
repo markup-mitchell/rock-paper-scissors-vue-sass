@@ -19,6 +19,7 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/styles.scss';
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border: solid 2px $header-outline;
