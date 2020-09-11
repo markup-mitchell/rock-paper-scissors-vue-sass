@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Layout>
-      <Header></Header>
+      <Header :score="score"></Header>
     </Layout>
   </div>
 </template>
@@ -15,7 +15,8 @@ export default {
   data() {
     return {
       playerChoice: 'pending',
-      houseChoice: 'pending'
+      houseChoice: 'pending',
+      score: 12
     };
   },
   components: {
@@ -26,6 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 $bg-light: #1f3757;
 $bg-dark: #131537;
 
@@ -36,6 +38,7 @@ body {
   min-height: 100vh;
   * {
     box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
   }
 }
 #app {
