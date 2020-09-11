@@ -17,10 +17,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/styles.scss';
 .header {
   display: flex;
   justify-content: space-between;
-  border: solid 2px rgba(255, 255, 255, 0.2);
+  border: solid 2px $header-outline;
   padding: 0.75rem;
   height: 96px;
   .logo-layout {
@@ -47,12 +48,12 @@ export default {
     .label {
       font-size: 10px;
       letter-spacing: 0.1rem;
-      color: #2a45c2; /* import this! */
+      color: $text-blue;
     }
     .score {
       font-size: 40px;
       margin: 0;
-      color: #565468; /*import!*/
+      color: $text-dark;
       font-weight: bold;
     }
   }
