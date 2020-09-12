@@ -1,7 +1,13 @@
 <template>
   <header class="header">
     <div class="logo-layout">
-      <img class="logo" src="../assets/logo.svg" alt="" />
+      <h1 class="header__h1">
+        <img
+          class="logo"
+          src="../assets/logo.svg"
+          alt="Rock, Paper, Scissors"
+        />
+      </h1>
     </div>
     <div class="score-box">
       <h2 class="label">SCORE</h2>
@@ -25,6 +31,10 @@ export default {
   border: solid 2px $header-outline;
   padding: 0.75rem;
   height: 96px;
+  &__h1 {
+    margin: 0;
+    height: 100%;
+  }
   .logo-layout {
     padding: 0.75rem;
   }
