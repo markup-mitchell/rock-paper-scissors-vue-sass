@@ -7,6 +7,16 @@
       <div v-if="playerChoice === 'pending'">
         <PlayerChoose @setPlayerChoice="setPlayerChoice" />
       </div>
+      <div v-else>
+        <template>
+          <p>you chose {{ playerChoice }}</p>
+          <p>the house chose {{ houseChoice }}</p>
+        </template>
+        <div v-if="outcome">
+          {{ outcome }}
+          <button v-on:click="playerChoice = 'pending'">play again</button>
+        </div>
+      </div>
       <template #rules>
         <button>RULES</button>
       </template>
@@ -25,11 +35,12 @@ export default {
     return {
       playerChoice: 'pending',
       houseChoice: 'pending',
-      score: 0
+      score: 0,
+      outcome: null
     };
   },
   methods: {
-    increment() {
+    incrementScore() {
       this.score++;
     },
     setPlayerChoice(choice) {
@@ -40,6 +51,29 @@ export default {
       this.houseChoice = ['rock', 'paper', 'scissors'][
         Math.floor(Math.random() * 3)
       ];
+      this.setOutcome();
+    },
+    setOutcome() {
+      switch (true) {
+        case this.playerChoice === this.houseChoice:
+          this.outcome = 'DRAW';
+          break;
+        case (this.playerChoice === 'rock' &&
+          this.houseChoice === 'scissors') ||
+          (this.playerChoice === 'paper' && this.houseChoice === 'rock') ||
+          (this.playerChoice === 'scissors' && this.houseChoice === 'paper'):
+          this.outcome = 'YOU WIN';
+          this.incrementScore();
+          break;
+        case (this.playerChoice === 'rock' && this.houseChoice === 'paper') ||
+          (this.playerChoice === 'paper' && this.houseChoice === 'scissors') ||
+          (this.playerChoice === 'scissors' && this.houseChoice === 'rock'):
+          this.outcome = 'YOU LOSE';
+          break;
+        default:
+          this.outcome = 'error';
+          break;
+      }
     }
   },
   components: {
@@ -63,6 +97,10 @@ body {
   * {
     box-sizing: border-box;
     font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+    button {
+      background-color: transparent;
+    }
   }
 }
 #app {
