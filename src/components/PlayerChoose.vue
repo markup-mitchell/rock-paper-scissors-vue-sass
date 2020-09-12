@@ -1,35 +1,33 @@
 <template>
   <div class="">
-    <button
-      @click="setPlayerChoice()"
+    <IconButton
       value="rock"
+      @click="setPlayerChoice()"
       v-on:click="setPlayerChoice"
-    >
-      rock
-    </button>
-    <button
+    />
+    <IconButton
       value="paper"
       @click="setPlayerChoice()"
       v-on:click="setPlayerChoice"
-    >
-      paper
-    </button>
-    <button
+    />
+    <IconButton
       value="scissors"
       @click="setPlayerChoice()"
       v-on:click="setPlayerChoice"
-    >
-      scissors
-    </button>
+    />
   </div>
 </template>
 
 <script>
+import IconButton from './IconButton';
 export default {
   methods: {
     setPlayerChoice(e) {
       this.$emit('setPlayerChoice', e.target.value);
     }
+  },
+  components: {
+    IconButton
   }
 };
 </script>

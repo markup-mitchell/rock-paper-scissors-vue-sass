@@ -1,11 +1,11 @@
 // $### Primary
 
-$scissors: radial-gradient(hsl(39, 89%, 49%) to hsl(40, 84%, 53%));
+$bg-scissors: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 
-$paper: radial-gradient(hsl(230, 89%, 62%) to hsl(230, 89%, 65%));
-$rock: radial-gradient(hsl(349, 71%, 52%) to hsl(349, 70%, 56%));
-$lizard: radial-gradient(hsl(261, 73%, 60%) to hsl(261, 72%, 63%));
-$cyan: radial-gradient(hsl(189, 59%, 53%) to hsl(189, 58%, 57%));
+$bg-paper: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+$bg-rock: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+// $lizard: radial-gradient(hsl(261, 73%, 60%) to hsl(261, 72%, 63%));
+// $cyan: radial-gradient(hsl(189, 59%, 53%) to hsl(189, 58%, 57%));
 
 // ### Neutral
 
@@ -15,4 +15,9 @@ $header-outline: hsl(217, 16%, 45%);
 
 // ### Background
 
-$bg-gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+$bg-gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+$bg-off-white: #f2f2f2;
+$shadow-inset: #babfd4;
+$shadow-rock: #9d1634;
+$shadow-scissors: #c76c1b;
+$shadow-paper: #2a45c2;
