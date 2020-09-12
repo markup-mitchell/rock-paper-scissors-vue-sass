@@ -34,6 +34,12 @@ export default {
     },
     setPlayerChoice(choice) {
       this.playerChoice = choice;
+      this.setHouseChoice();
+    },
+    setHouseChoice() {
+      this.houseChoice = ['rock', 'paper', 'scissors'][
+        Math.floor(Math.random() * 3)
+      ];
     }
   },
   components: {

@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <button
-      @click="setPlayerChoice(this.value)"
+      @click="setPlayerChoice()"
       value="rock"
       v-on:click="setPlayerChoice"
     >
@@ -9,14 +9,14 @@
     </button>
     <button
       value="paper"
-      @click="setPlayerChoice(this.value)"
+      @click="setPlayerChoice()"
       v-on:click="setPlayerChoice"
     >
       paper
     </button>
     <button
       value="scissors"
-      @click="setPlayerChoice(this.value)"
+      @click="setPlayerChoice()"
       v-on:click="setPlayerChoice"
     >
       scissors
@@ -27,8 +27,8 @@
 <script>
 export default {
   methods: {
-    setPlayerChoice(choice) {
-      this.$emit('setPlayerChoice', choice);
+    setPlayerChoice(e) {
+      this.$emit('setPlayerChoice', e.target.value);
     }
   }
 };
