@@ -1,24 +1,6 @@
 # vue-rock-paper-scissors
 
-## Project setup
-```
-npm install
-```
+My first time using either Vue.js or SASS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+A frontendmentor.io challenge. 
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
